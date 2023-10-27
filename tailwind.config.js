@@ -6,6 +6,9 @@ export default {
       backgroundColor: {
         primary: "#222222", // Your desired background color
       },
+      textColor: {
+        white: "#fff",
+      },
     },
     colors: {
       transparent: "transparent",

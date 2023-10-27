@@ -4,7 +4,7 @@ function CurrentRecipe() {
   let { id } = useParams();
   return (
     <>
-      <div className="flex justify-center items-center h-screen">
+      <div className="bg-primary flex justify-center items-center h-screen text-white">
         <div>{"This is the recipe " + id}</div>
       </div>
     </>
