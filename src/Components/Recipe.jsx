@@ -2,14 +2,7 @@ import { Link } from "react-router-dom";
 function Recipe() {
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          alignItems: "center",
-          height: "100vh",
-        }}
-      >
+      <div className="bg-primary flex justify-evenly items-center h-screen">
         <h1>
           <Link to="/recipe/tarta-de-chicho">Tarta de chicho</Link>
         </h1>

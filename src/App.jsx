@@ -2,7 +2,7 @@ import { useState } from "react";
 import Header from "./Components/Header.jsx";
 import Footer from "./Components/Footer.jsx";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Recipe from "./Recipe";
+import Recipe from "./Components/Recipe";
 import CurrentRecipe from "./Components/CurrentRecipe";
 
 function App() {
