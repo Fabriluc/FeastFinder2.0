@@ -16,7 +16,7 @@ function App() {
         <Route path="/recipe/:id" element={<CurrentRecipe />} />
         {/* <Route path="*" element={<Navigate to="/" />} /> */}
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

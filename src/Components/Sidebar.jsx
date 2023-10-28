@@ -4,14 +4,14 @@ import "tailwindcss/tailwind.css";
 const SideBar = () => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="bg-white py-3 fixed top-0 left-0 right-0 shadow-md">
+    <div className="bg-transparent py-6 fixed top-0 left-0">
       <button className="ml-4" onClick={() => setOpen(true)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={1.5}
-          stroke="currentColor"
+          stroke="white"
           className="w-6 h-6"
         >
           <path
@@ -32,7 +32,7 @@ const SideBar = () => {
       <div
         className={`${
           open ? "w-80" : "w-0"
-        } bg-cyan-600 min-h-screen fixed top-0 left-0 transition-all duration-300`}
+        } bg-gray-400/50 min-h-screen fixed top-0 left-0 transition-all duration-300`}
       >
         <div className={`${!open && "hidden"} pt-3`}>
           <button
@@ -45,7 +45,7 @@ const SideBar = () => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-6 h-6"
+              className="w-6 h-12"
             >
               <path
                 strokeLinecap="round"
@@ -54,19 +54,19 @@ const SideBar = () => {
               />
             </svg>
           </button>
-          <div className="text-center text-white text-xl hover:bg-orange-400 cursor-pointer py-3 mb-2">
+          <div className="text-center text-white text-xl hover:bg-headerred cursor-pointer py-3 mb-2">
             Link 1
           </div>
-          <div className="text-center text-white text-xl hover:bg-orange-400 cursor-pointer py-3 mb-2">
+          <div className="text-center text-white text-xl hover:bg-headerred cursor-pointer py-3 mb-2">
             Link 2
           </div>
-          <div className="text-center text-white text-xl hover:bg-orange-400 cursor-pointer py-3 mb-2">
+          <div className="text-center text-white text-xl hover:bg-headerred cursor-pointer py-3 mb-2">
             Link 3
           </div>
-          <div className="text-center text-white text-xl hover:bg-orange-400 cursor-pointer py-3 mb-2">
+          <div className="text-center text-white text-xl hover:bg-headerred cursor-pointer py-3 mb-2">
             Link 4
           </div>
-          <div className="text-center text-white text-xl hover:bg-orange-400 cursor-pointer py-3 mb-2">
+          <div className="text-center text-white text-xl hover:bg-headerred cursor-pointer py-3 mb-2">
             Link 5
           </div>
         </div>
