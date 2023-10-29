@@ -26,9 +26,15 @@ const UnitConverter = () => {
   };
 
   const handleConversion = () => {
-    const conversionRate = conversionRates[inputUnit][outputUnit] || 1;
-    const convertedValue = (inputValue * conversionRate).toFixed(3);
-    setOutputValue(convertedValue);
+    if (inputUnit === outputUnit) {
+      setOutputValue(inputValue);
+    } else if (conversionRates[inputUnit][outputUnit]) {
+      const conversionRate = conversionRates[inputUnit][outputUnit];
+      const convertedValue = (inputValue * conversionRate).toFixed(2);
+      setOutputValue(convertedValue);
+    } else {
+      setOutputValue("Invalid conversion");
+    }
   };
 
   return (
@@ -45,20 +51,36 @@ const UnitConverter = () => {
         onChange={handleInputUnitChange}
         className="w-40 bg-neutral-600 mb-5"
       >
-        <option value="kg">kg</option>
-        <option value="g">g</option>
-        <option value="lb">lb</option>
-        <option value="oz">oz</option>
+        <option value="kg">kilogramos</option>
+        <option value="g">gramos</option>
+        <option value="lb">libras</option>
+        <option value="oz">onzas</option>
+        <option value="tsp">cucharadas</option>
+        <option value="tbsp">cucharadas soperas</option>
+
+        <option value="l">litros</option>
+        <option value="ml">mililitros</option>
+        <option value="fl-oz">onzas fluidas</option>
+        <option value="gal">galones</option>
+        <option value="cup">tazas (vol)</option>
       </select>
       <select
         value={outputUnit}
         onChange={handleOutputUnitChange}
         className="w-40 bg-neutral-600 mb-5"
       >
-        <option value="kg">kg</option>
-        <option value="g">g</option>
-        <option value="lb">lb</option>
-        <option value="oz">oz</option>
+        <option value="kg">kilogramos</option>
+        <option value="g">gramos</option>
+        <option value="lb">libras</option>
+        <option value="oz">onzas</option>
+        <option value="tsp">cucharadas</option>
+        <option value="tbsp">cucharadas soperas</option>
+
+        <option value="l">litros</option>
+        <option value="ml">mililitros</option>
+        <option value="fl-oz">onzas fluidas</option>
+        <option value="gal">galones</option>
+        <option value="cup">tazas (vol)</option>
       </select>
       <button
         onClick={handleConversion}
