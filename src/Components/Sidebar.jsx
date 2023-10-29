@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "tailwindcss/tailwind.css";
 
 const SideBar = () => {
@@ -67,7 +68,7 @@ const SideBar = () => {
             Link 4
           </div>
           <div className="text-center text-white text-xl hover:bg-headerred cursor-pointer py-3 mb-2">
-            <Link to="/contact">Contáctenos</Link>
+            <Link to="/contact">Contactanos </Link>
           </div>
         </div>
       </div>
