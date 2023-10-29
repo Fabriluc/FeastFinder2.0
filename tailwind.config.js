@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundColor: {
-        primary: "#303030", // Your desired background color
+        primary: "#302f2e", // Your desired background color
       },
       textColor: {
         white: "#fff",
@@ -12,14 +12,8 @@ export default {
       colors: {
         transparent: "transparent",
         current: "currentColor",
-        footerbrown: "#963413",
-        headerred: "#CD4747",
-        lightpeach: "#FFE6BD",
-        metal: "#565584",
-        tahiti: "#3ab7bf",
-        silver: "#ecebff",
-        "bubble-gum": "#ff77e9",
-        bermuda: "#78dcca",
+        headerred: "#c23a3a",
+        secondary: "#4b4745",
       },
     },
   },

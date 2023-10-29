@@ -26,14 +26,14 @@ const SideBar = () => {
       <div
         className={`${
           !open && "hidden"
-        } bg-gray-600/50 min-h-screen w-full fixed top-0 left-0 right-0 backdrop-blur-sm`}
+        } bg-gray-700/50 min-h-screen w-full fixed top-0 left-0 right-0 backdrop-blur-sm`}
         onClick={() => setOpen(false)}
       ></div>
 
       <div
         className={`${
           open ? "w-80" : "w-0"
-        } bg-gray-400/50 min-h-screen fixed top-0 left-0 transition-all duration-300`}
+        } bg-gray-500/50 min-h-screen fixed top-0 left-0 transition-all duration-300`}
       >
         <div className={`${!open && "hidden"} pt-3`}>
           <button

@@ -8,7 +8,7 @@ const ContactForm = () => {
           Nombres
         </label>
         <input
-          className="block w-full mb-5 border-b-2 border-headerred text-white outline-none bg-neutral-600"
+          className="block w-full mb-5 border-b-2 border-headerred text-white outline-none bg-secondary"
           type="text"
           name="nombres"
           id="nombres"
@@ -18,7 +18,7 @@ const ContactForm = () => {
           Correo
         </label>
         <input
-          className="block w-full mb-5 border-b-2 border-headerred text-white outline-none bg-neutral-600"
+          className="block w-full mb-5 border-b-2 border-headerred text-white outline-none bg-secondary"
           type="text"
           name="correo"
           id="correo"
@@ -28,7 +28,7 @@ const ContactForm = () => {
           Celular
         </label>
         <input
-          className="block w-full mb-5 border-b-2 border-headerred text-white outline-none bg-neutral-600"
+          className="block w-full mb-5 border-b-2 border-headerred text-white outline-none bg-secondary"
           type="text"
           name="celular"
           id="celular"
@@ -38,7 +38,7 @@ const ContactForm = () => {
           Mensaje
         </label>
         <textarea
-          className="block w-full mb-5 border-b-2 border-headerred text-white outline-none min-h-28 bg-neutral-600"
+          className="block w-full mb-5 border-b-2 border-headerred text-white outline-none min-h-28 bg-secondary"
           name="mensaje"
           id="mensaje"
         ></textarea>

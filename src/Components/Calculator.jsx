@@ -50,12 +50,12 @@ const UnitConverter = () => {
         type="number"
         value={inputValue}
         onChange={handleInputChange}
-        className="w-50 bg-neutral-600 mb-5 mt-2"
+        className="w-50 bg-secondary mb-5 mt-2"
       />
       <select
         value={inputUnit}
         onChange={handleInputUnitChange}
-        className="w-40 bg-neutral-600 mb-5"
+        className="w-40 bg-secondary mb-5"
       >
         <option value="kg">kilogramos</option>
         <option value="g">gramos</option>
@@ -73,7 +73,7 @@ const UnitConverter = () => {
       <select
         value={outputUnit}
         onChange={handleOutputUnitChange}
-        className="w-40 bg-neutral-600 mb-5"
+        className="w-40 bg-secondary mb-5"
       >
         <option value="kg">kilogramos</option>
         <option value="g">gramos</option>
