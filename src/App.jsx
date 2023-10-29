@@ -4,7 +4,7 @@ import Footer from "./Components/Footer.jsx";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Recipe from "./Components/Recipe";
 import CurrentRecipe from "./Components/CurrentRecipe";
-
+import ContactForm from "./Components/ContactForm.jsx";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -15,6 +15,7 @@ function App() {
         <Route path="/" element={<Recipe />} />
         <Route path="/recipe/:id" element={<CurrentRecipe />} />
         {/* <Route path="*" element={<Navigate to="/" />} /> */}
+        <Route path="/contact" element={<ContactForm />} />
       </Routes>
       {/* <Footer /> */}
     </>
