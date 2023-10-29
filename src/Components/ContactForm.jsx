@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactForm = () => {
   return (
-    <section className="form-contact fixed inset-0 flex items-center justify-center bg-primary text-white">
+    <section className="form-contact flex items-center justify-center h-screen bg-primary text-white">
       <form className="contact p-4 w-1/2" action="" method="POST">
         <label className="font-bold" htmlFor="nombres" unselectable="on">
           Nombres
