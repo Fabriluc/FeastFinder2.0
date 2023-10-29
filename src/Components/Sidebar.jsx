@@ -67,7 +67,7 @@ const SideBar = () => {
             Link 4
           </div>
           <div className="text-center text-white text-xl hover:bg-headerred cursor-pointer py-3 mb-2">
-            Link 5
+            <Link to="/contact">Contáctenos</Link>
           </div>
         </div>
       </div>
