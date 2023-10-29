@@ -19,10 +19,16 @@ const UnitConverter = () => {
   };
 
   const conversionRates = {
-    kg: { g: 1000, lb: 2.20462, oz: 35.27 },
-    g: { kg: 1000, lb: 0.00220462, oz: 0.035274 },
-    lb: { kg: 2.20462, g: 453.592, oz: 16 },
-    oz: { kg: 35.274, g: 28.3495, lb: 0.0625 },
+    kg: { g: 1000, lb: 2.20462, oz: 35.274, tsp: 0.5, tbsp: 0.5 },
+    g: { kg: 0.001, lb: 0.00220462, oz: 0.035274, tsp: 0.0005, tbsp: 0.0005 },
+    lb: { kg: 0.453592, g: 453.592, oz: 16, tsp: 0.125, tbsp: 0.125 },
+    oz: { kg: 0.0283495, g: 28.3495, lb: 0.0625, tsp: 0.005, tbsp: 0.005 },
+
+    ml: { l: 0.001, fl_oz: 0.0351951, gal: 0.264172, cup: 0.000236588 },
+    l: { ml: 1000, fl_oz: 35.1951, gal: 0.219969, cup: 3.51951 },
+    fl_oz: { ml: 28.4131, l: 0.0284131, gal: 0.00625, cup: 0.1 },
+    cup: { ml: 236.588, l: 4.92894, fl_oz: 10, gal: 0.0625 },
+    gal: { ml: 4546.09, l: 4.54609, fl_oz: 160, cup: 16 },
   };
 
   const handleConversion = () => {
@@ -30,7 +36,7 @@ const UnitConverter = () => {
       setOutputValue(inputValue);
     } else if (conversionRates[inputUnit][outputUnit]) {
       const conversionRate = conversionRates[inputUnit][outputUnit];
-      const convertedValue = (inputValue * conversionRate).toFixed(2);
+      const convertedValue = (inputValue * conversionRate).toFixed(3);
       setOutputValue(convertedValue);
     } else {
       setOutputValue("Invalid conversion");
@@ -60,7 +66,7 @@ const UnitConverter = () => {
 
         <option value="l">litros</option>
         <option value="ml">mililitros</option>
-        <option value="fl-oz">onzas fluidas</option>
+        <option value="fl_oz">onzas fluidas</option>
         <option value="gal">galones</option>
         <option value="cup">tazas (vol)</option>
       </select>
@@ -78,7 +84,7 @@ const UnitConverter = () => {
 
         <option value="l">litros</option>
         <option value="ml">mililitros</option>
-        <option value="fl-oz">onzas fluidas</option>
+        <option value="fl_oz">onzas fluidas</option>
         <option value="gal">galones</option>
         <option value="cup">tazas (vol)</option>
       </select>

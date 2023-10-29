@@ -65,7 +65,7 @@ const SideBar = () => {
             Link 3
           </div>
           <div className="text-center text-white text-xl hover:bg-headerred cursor-pointer py-3 mb-2">
-            Link 4
+            <Link to="/calculator">Convertor de unidades </Link>
           </div>
           <div className="text-center text-white text-xl hover:bg-headerred cursor-pointer py-3 mb-2">
             <Link to="/contact">Contactanos </Link>
