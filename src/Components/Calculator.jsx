@@ -1,61 +1,76 @@
 import React, { useState } from "react";
 
-const Calculator = () => {
+const UnitConverter = () => {
   const [inputValue, setInputValue] = useState("");
-  const [grams, setGrams] = useState(0);
-  const [ounces, setOunces] = useState(0);
-  const [cubicCentimeters, setCubicCentimeters] = useState(0);
+  const [inputUnit, setInputUnit] = useState("kg");
+  const [outputUnit, setOutputUnit] = useState("g");
+  const [outputValue, setOutputValue] = useState("");
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
 
-  const convertToGrams = () => {
-    const ouncesValue = parseFloat(inputValue);
-    if (!isNaN(ouncesValue)) {
-      const gramsValue = ouncesValue * 28.35;
-      setGrams(gramsValue.toFixed(2));
-    } else {
-      setGrams(0);
-    }
+  const handleInputUnitChange = (e) => {
+    setInputUnit(e.target.value);
   };
 
-  const convertToOunces = () => {
-    const gramsValue = parseFloat(inputValue);
-    if (!isNaN(gramsValue)) {
-      const ouncesValue = gramsValue / 28.35;
-      setOunces(ouncesValue.toFixed(2));
-    } else {
-      setOunces(0);
-    }
+  const handleOutputUnitChange = (e) => {
+    setOutputUnit(e.target.value);
   };
 
-  const convertToCubicCentimeters = () => {
-    const millilitersValue = parseFloat(inputValue);
-    if (!isNaN(millilitersValue)) {
-      setCubicCentimeters(millilitersValue.toFixed(2));
-    } else {
-      setCubicCentimeters(0);
-    }
+  const conversionRates = {
+    kg: { g: 0.001, lb: 0.453592, oz: 0.0283495 },
+    g: { kg: 1000, lb: 0.00220462, oz: 0.035274 },
+    lb: { kg: 2.20462, g: 453.592, oz: 16 },
+    oz: { kg: 35.274, g: 28.3495, lb: 0.0625 },
+  };
+
+  const handleConversion = () => {
+    const conversionRate = conversionRates[inputUnit][outputUnit] || 1;
+    const convertedValue = inputValue * conversionRate;
+    setOutputValue(convertedValue);
   };
 
   return (
-    <div>
-      <h1>Kitchen Converter</h1>
-      <label>
-        Ounces:
-        <input type="text" value={inputValue} onChange={handleInputChange} />
-      </label>
-      <button onClick={convertToGrams}>Convert to Grams</button>
-      <p>Grams: {grams}</p>
-      <button onClick={convertToOunces}>Convert to Ounces</button>
-      <p>Ounces: {ounces}</p>
-      <button onClick={convertToCubicCentimeters}>
-        Convert to Cubic Centimeters
+    <div className="flex flex-col items-center justify-center h-screen bg-primary text-white">
+      <h1>Convertir Unidades</h1>
+      <input
+        type="number"
+        value={inputValue}
+        onChange={handleInputChange}
+        className="w-50 bg-neutral-600 mb-5 mt-2"
+      />
+      <select
+        value={inputUnit}
+        onChange={handleInputUnitChange}
+        className="w-40 bg-neutral-600 mb-5"
+      >
+        <option value="kg">kg</option>
+        <option value="g">g</option>
+        <option value="lb">lb</option>
+        <option value="oz">oz</option>
+      </select>
+      <select
+        value={outputUnit}
+        onChange={handleOutputUnitChange}
+        className="w-40 bg-neutral-600 mb-5"
+      >
+        <option value="kg">kg</option>
+        <option value="g">g</option>
+        <option value="lb">lb</option>
+        <option value="oz">oz</option>
+      </select>
+      <button
+        onClick={handleConversion}
+        className="w-20 bg-headerred mb-3 rounded py-2 text-white"
+      >
+        Convertir
       </button>
-      <p>Cubic Centimeters: {cubicCentimeters}</p>
+      <p>
+        {outputValue} {outputUnit}
+      </p>
     </div>
   );
 };
 
-export default Calculator;
+export default UnitConverter;
