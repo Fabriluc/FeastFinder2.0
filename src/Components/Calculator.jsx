@@ -19,7 +19,7 @@ const UnitConverter = () => {
   };
 
   const conversionRates = {
-    kg: { g: 0.001, lb: 0.453592, oz: 0.0283495 },
+    kg: { g: 1000, lb: 2.20462, oz: 35.27 },
     g: { kg: 1000, lb: 0.00220462, oz: 0.035274 },
     lb: { kg: 2.20462, g: 453.592, oz: 16 },
     oz: { kg: 35.274, g: 28.3495, lb: 0.0625 },
@@ -27,7 +27,7 @@ const UnitConverter = () => {
 
   const handleConversion = () => {
     const conversionRate = conversionRates[inputUnit][outputUnit] || 1;
-    const convertedValue = inputValue * conversionRate;
+    const convertedValue = (inputValue * conversionRate).toFixed(3);
     setOutputValue(convertedValue);
   };
 
