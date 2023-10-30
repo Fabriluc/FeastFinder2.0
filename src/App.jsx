@@ -13,7 +13,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Recipe />} />
-        <Route path="/recipe/:id" element={<CurrentRecipe />} />
+        <Route path="/recipe/:title" element={<CurrentRecipe />} />
         {/* <Route path="*" element={<Navigate to="/" />} /> */}
         <Route path="/contact" element={<ContactForm />} />
         <Route path="/calculator" element={<Calculator />} />
