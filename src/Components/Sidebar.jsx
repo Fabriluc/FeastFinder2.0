@@ -56,14 +56,14 @@ const SideBar = () => {
             </svg>
           </button>
           <div className="text-center text-white text-xl hover:bg-headerred cursor-pointer py-3 mb-2">
-            Link 1
+            Mi perfil
           </div>
-          <div className="text-center text-white text-xl hover:bg-headerred cursor-pointer py-3 mb-2">
+          {/* <div className="text-center text-white text-xl hover:bg-headerred cursor-pointer py-3 mb-2">
             Link 2
           </div>
           <div className="text-center text-white text-xl hover:bg-headerred cursor-pointer py-3 mb-2">
             Link 3
-          </div>
+          </div> */}
           <div className="text-center text-white text-xl hover:bg-headerred cursor-pointer py-3 mb-2">
             <Link to="/calculator">Conversor de unidades </Link>
           </div>
