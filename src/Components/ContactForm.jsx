@@ -12,24 +12,30 @@ const ContactForm = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submitting form data:", formData);
-    try {
-      const response = await fetch("http://localhost:3000/api/contact", {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json",
-        },
+    console.log(formData);
+
+    fetch("http://localhost:3000/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => {
+        if (response.ok) {
+          // Handle successful form submission
+          console.log("Form submitted successfully");
+        } else {
+          // Handle form submission error
+          console.error("Form submission error");
+        }
+      })
+      .catch((error) => {
+        // Handle fetch error
+        console.error(error);
       });
-      const data = await response.json();
-      console.log("API response:", data);
-      // Handle the response from your API
-      console.log("Handling API response...");
-    } catch (error) {
-      console.error("API request error:", error);
-    }
   };
 
   return (

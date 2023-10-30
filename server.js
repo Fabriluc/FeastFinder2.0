@@ -1,5 +1,6 @@
 import express from "express";
 import path from "path";
+import bodyParser from "body-parser";
 import runQuery from "./DatabaseConnection.js";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
@@ -53,10 +54,10 @@ app.get("/api/recipes/:title", (req, res) => {
     }
   });
 });
-
+app.use(express.json());
 app.post("/api/contact", (req, res) => {
   const { name, email, phone, message } = req.body;
-
+  console.log(name + " " + email + " " + phone + " " + message);
   const insertContact = `INSERT INTO ContatForm (name, email, phone, message) VALUES ('${name}', '${email}', '${phone}', '${message}')`;
 
   runQuery(insertContact, (err, results) => {
