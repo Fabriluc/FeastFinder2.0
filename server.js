@@ -54,6 +54,22 @@ app.get("/api/recipes/:title", (req, res) => {
   });
 });
 
+app.post("/api/contact", (req, res) => {
+  const { name, email, phone, message } = req.body;
+
+  const insertContact = `INSERT INTO ContatForm (name, email, phone, message) VALUES ('${name}', '${email}', '${phone}', '${message}')`;
+
+  runQuery(insertContact, (err, results) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({ error: "Internal server error" });
+    } else {
+      res.json(results);
+      console.log(results);
+    }
+  });
+});
+
 app.listen(3000, () => {
   console.log("Server listening on http://localhost:3000");
 });

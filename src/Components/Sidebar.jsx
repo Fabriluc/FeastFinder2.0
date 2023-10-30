@@ -5,7 +5,7 @@ import "tailwindcss/tailwind.css";
 const SideBar = () => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="bg-transparent py-6 fixed top-0 left-0">
+    <div className="bg-transparent py-6 fixed top-0 left-0 z-50">
       <button className="ml-4" onClick={() => setOpen(true)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ const SideBar = () => {
       <div
         className={`${
           open ? "w-80" : "w-0"
-        } bg-neutral-500/50 min-h-screen fixed top-0 left-0 transition-all duration-300`}
+        } bg-neutral-500/50 min-h-screen fixed top-0 left-0 transition-all duration-300 `}
       >
         <div className={`${!open && "hidden"} pt-3`}>
           <button
