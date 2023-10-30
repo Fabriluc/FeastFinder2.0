@@ -14,7 +14,6 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
 
     fetch("http://localhost:3000/api/contact", {
       method: "POST",
@@ -26,10 +25,22 @@ const ContactForm = () => {
       .then((response) => {
         if (response.ok) {
           // Handle successful form submission
-          console.log("Form submitted successfully");
+          alert("Formulario enviado correctamente");
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            message: "",
+          });
         } else {
           // Handle form submission error
-          console.error("Form submission error");
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            message: "",
+          });
+          alert("Error de formulario");
         }
       })
       .catch((error) => {
@@ -90,7 +101,7 @@ const ContactForm = () => {
           ></textarea>
 
           <button
-            className="input bg-headerred text-white text-center font-bold py-2 px-4 rounded-full block mx-auto w-32"
+            className="input bg-headerred text-white text-center font-bold py-2 px-4 rounded-full block mx-auto w-32 focus:bg-active hover:bg-hover"
             type="submit"
           >
             Enviar

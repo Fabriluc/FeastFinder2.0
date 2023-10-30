@@ -12,7 +12,7 @@ const dirname2 = dirname(filename);
 const app = express();
 
 app.use(express.static("dist"));
-
+app.use(express.json());
 app.use(cors());
 
 app.get("/products/:id", function (req, res, next) {
@@ -54,10 +54,9 @@ app.get("/api/recipes/:title", (req, res) => {
     }
   });
 });
-app.use(express.json());
+
 app.post("/api/contact", (req, res) => {
   const { name, email, phone, message } = req.body;
-  console.log(name + " " + email + " " + phone + " " + message);
   const insertContact = `INSERT INTO ContatForm (name, email, phone, message) VALUES ('${name}', '${email}', '${phone}', '${message}')`;
 
   runQuery(insertContact, (err, results) => {

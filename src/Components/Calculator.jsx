@@ -39,7 +39,7 @@ const UnitConverter = () => {
       const convertedValue = (inputValue * conversionRate).toFixed(3);
       setOutputValue(convertedValue);
     } else {
-      setOutputValue("Invalid conversion");
+      setOutputValue("Conversión Inválida");
     }
   };
 
