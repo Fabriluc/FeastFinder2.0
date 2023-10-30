@@ -13,12 +13,23 @@ const app = express();
 
 app.use(express.static("dist"));
 
-// app.use(express.static(path.join(__dirname, "dist")));
-
-// Add a route handler for serving the React index.html
 app.get("/", (req, res) => {
   const filePath = path.join(dirname2, "/dist/index.html");
   res.sendFile(filePath);
+});
+
+app.get("/recipe", (req, res) => {
+  // const insertQuery = INSERT INTO Users (Username, Password, Email, FirstName, LastName) VALUES ('${username}', '${password}', '${email}', '${firstName}', '${lastName}');
+  const getRecipes = `SELECT * FROM Recipes`;
+
+  runQuery(getRecipes, (err, results) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({ error: "Internal server error" });
+    } else {
+      res.json(results);
+    }
+  });
 });
 
 app.listen(3000, () => {
