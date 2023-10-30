@@ -16,19 +16,16 @@ function CurrentRecipe() {
 
   return (
     <>
-      <div className="bg-primary flex justify-center items-center h-screen text-white">
-        <div>
-          <h1>{recipe[0]?.title}</h1>
-          <img
-            className="w-1/2 max-h-80"
-            width="1000px"
-            src={recipe[0]?.img}
-            alt=""
-          />
-          <p className="w-1/2">{recipe[0]?.description}</p>
+      <section className="bg-primary flex flex-col items-center">
+        <div className="bg-primary flex flex-col items-center justify-center text-white mt-6">
+          <h1 className="text-4xl mb-8 ">{recipe[0]?.title}</h1>
+          <img className=" mb-8 max-w-sm" src={recipe[0]?.img} alt="" />
+          <p className="w-2/4 text-center mb-10">{recipe[0]?.description}</p>
         </div>
-        <Calculator />
-      </div>
+        <div className="flex justify-center items-center">
+          <Calculator />
+        </div>
+      </section>
     </>
   );
 }

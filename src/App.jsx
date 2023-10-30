@@ -11,13 +11,15 @@ function App() {
   return (
     <>
       <Header />
-      <Routes>
-        <Route path="/" element={<Recipe />} />
-        <Route path="/recipe/:title" element={<CurrentRecipe />} />
-        {/* <Route path="*" element={<Navigate to="/" />} /> */}
-        <Route path="/contact" element={<ContactForm />} />
-        <Route path="/calculator" element={<Calculator />} />
-      </Routes>
+      <body className=" bg-primary h-[calc(100vh-5rem)]">
+        <Routes>
+          <Route path="/" element={<Recipe />} />
+          <Route path="/recipe/:title" element={<CurrentRecipe />} />
+          {/* <Route path="*" element={<Navigate to="/" />} /> */}
+          <Route path="/contact" element={<ContactForm />} />
+          <Route path="/calculator" element={<Calculator />} />
+        </Routes>
+      </body>
     </>
   );
 }

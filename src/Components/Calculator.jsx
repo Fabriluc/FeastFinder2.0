@@ -44,7 +44,7 @@ const UnitConverter = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-primary text-white">
+    <div className="flex flex-col items-center justify-center mt-8 mb-8 bg-primary text-white">
       <h1>Convertir Unidades</h1>
       <input
         type="number"
