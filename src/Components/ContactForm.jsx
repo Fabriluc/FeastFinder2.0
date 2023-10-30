@@ -32,6 +32,8 @@ const ContactForm = () => {
             phone: "",
             message: "",
           });
+          // Redirect to the index page
+          window.location.href = "/";
         } else {
           // Handle form submission error
           setFormData({
@@ -61,6 +63,7 @@ const ContactForm = () => {
             type="text"
             name="name"
             id="name"
+            required
             value={formData.name}
             onChange={handleChange}
           />
@@ -70,9 +73,10 @@ const ContactForm = () => {
           </label>
           <input
             className="block w-full mb-5 border-b-2 border-headerred text-white outline-none bg-secondary"
-            type="text"
+            type="email"
             name="email"
             id="email"
+            required
             value={formData.email}
             onChange={handleChange}
           />
@@ -82,9 +86,11 @@ const ContactForm = () => {
           </label>
           <input
             className="block w-full mb-5 border-b-2 border-headerred text-white outline-none bg-secondary"
-            type="text"
+            type="tel"
+            pattern="[0-9]{8,12}"
             name="phone"
             id="phone"
+            required
             value={formData.phone}
             onChange={handleChange}
           />
@@ -96,6 +102,7 @@ const ContactForm = () => {
             className="block w-full mb-5 border-b-2 border-headerred text-white outline-none min-h-28 bg-secondary"
             name="message"
             id="message"
+            required
             value={formData.message}
             onChange={handleChange}
           ></textarea>
