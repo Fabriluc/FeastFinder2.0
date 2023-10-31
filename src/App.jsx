@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Header />
-      <body className=" bg-primary h-[calc(100vh-5rem)]">
+      <div className=" bg-primary h-[calc(100vh-5rem)]">
         <Routes>
           <Route path="/" element={<Recipe />} />
           <Route path="/recipe/:title" element={<CurrentRecipe />} />
@@ -19,7 +19,7 @@ function App() {
           <Route path="/contact" element={<ContactForm />} />
           <Route path="/calculator" element={<Calculator />} />
         </Routes>
-      </body>
+      </div>
     </>
   );
 }

@@ -29,7 +29,6 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/recipes", (req, res) => {
-  // const insertQuery = INSERT INTO Users (Username, Password, Email, FirstName, LastName) VALUES ('${username}', '${password}', '${email}', '${firstName}', '${lastName}');
   const getRecipes = `SELECT * FROM Recipes`;
 
   runQuery(getRecipes, (err, results) => {
